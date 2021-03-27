@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../database");
 
+
 router.get("/", async (request, response) => {
-//  console.log(request.query)
+  //  console.log(request.query)
   const maxPrice = parseInt(request.query.maxPrice) || '1e500';
   const title = request.query.title || '';
   let createdAfter = new Date(request.query.createdAfter);
@@ -17,32 +18,32 @@ router.get("/", async (request, response) => {
       //meals that are no one booked
       const mealIdInReservations = knex("reservations").select("meal_id");
       const mealsWithoutReservations = await knex("meals")
-        .select("meals.id","title", "meals.when", "max_reservations as Total_reservations",
-        "max_reservations as No_of_available_reservations")
+        .select("meals.id", "title", "meals.when", "max_reservations as Total_reservations",
+          "max_reservations as No_of_available_reservations")
         .where("id", "not in", mealIdInReservations);
 
-        //meals that are booked by few people, but has available reservations    
-        const reservationsLeftInMeals = await knex("meals")
-        .join('reservations', {'meals.id': 'reservations.meal_id'})
-        .select('meals.id', 'meals.title', "meals.when",'meals.max_reservations  as Total_reservations',        
-        knex.raw(
-          'meals.max_reservations - sum(reservations.number_of_guests) as "No_of_available_reservations"',
-        )  )
+      //meals that are booked by few people, but has available reservations    
+      const reservationsLeftInMeals = await knex("meals")
+        .join('reservations', { 'meals.id': 'reservations.meal_id' })
+        .select('meals.id', 'meals.title', "meals.when", 'meals.max_reservations  as Total_reservations',
+          knex.raw(
+            'meals.max_reservations - sum(reservations.number_of_guests) as "No_of_available_reservations"',
+          ))
         .sum('reservations.number_of_guests as reservations_booked')
-        .having('meals.max_reservations','>', "sum('reservations.number_of_guests')" )
+        .having('meals.max_reservations', '>', "sum('reservations.number_of_guests')")
         .groupBy('reservations.meal_id');
 
-        return response.json(mealsWithoutReservations.concat(reservationsLeftInMeals)) 
-                 
+      return response.json(mealsWithoutReservations.concat(reservationsLeftInMeals))
+
     }
-  
+
     const meals = await knex("meals")
       .where('title', 'like', `%${title}%`)
       .where('price', '<=', maxPrice)
       .limit(limit)
       .where('created_date', '>', createdAfter);
     return response.json(meals);
-    
+
   } catch (err) {
     if (err) {
       return response.status(400).send(err)
@@ -50,7 +51,7 @@ router.get("/", async (request, response) => {
       return next(err)
     }
   }
- });
+});
 
 router.post("/", async (request, response) => {
   try {
