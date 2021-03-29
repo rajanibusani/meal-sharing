@@ -18,48 +18,47 @@ const minDate = () => {
     const today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + minutes
     return today;
 }
+const initialValues = {
+    title: "",
+    location: "",
+    description: "",
+    maxReservations: "",
+    when: "",
+    price: ""
+};
 //adding Meal Component
 const AddMeal = () => {
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [location, setLocation] = useState("");
-    const [maxReservations, setMaxReservations] = useState("");
-    const [when, setWhen] = useState("");
-    const [price, setPrice] = useState("");
+    const [inputValues, setInputValues] = useState(initialValues);
 
-    const setStatesEmpty = () => {
-        setTitle("")
-        setDescription("")
-        setLocation("")
-        setMaxReservations("")
-        setWhen("")
-        setPrice("")
-        console.log("emptying")
+    // Input OnChange function
+    const handleOnChange = (e) => {
+        const { name, value } = e.target;
+        setInputValues({ ...inputValues, [name]: value })
     }
     //on submit function
     function onSubmit(e) {
         e.preventDefault();
         const meal = {
-            title,
-            description,
-            location,
-            when,
-            max_reservations: maxReservations,
-            price,
+            title: inputValues.title,
+            description: inputValues.description,
+            location: inputValues.location,
+            when: inputValues.when,
+            max_reservations: inputValues.maxReservations,
+            price: inputValues.price,
         }
 
         //posting a new meal
         const response = postData('http://localhost:5000/api/meals', meal);
         console.log(response, response.ok)
         if (response) {
-            const messagge = `Meal : ${meal.title} Added`;
+            const messagge = `Thank You, Your Meal : ${meal.title} Added`;
             alert(messagge)
         }
         else {
             throw new Error(response.status)
         }
         //making inputs empty
-        setStatesEmpty()
+        setInputValues(initialValues)
     }
 
     return (
@@ -77,28 +76,28 @@ const AddMeal = () => {
             <form onSubmit={onSubmit} className="add_meal_form">
                 <div>
                     <label htmlFor="title">Meal Title : </label>
-                    <input type="text" id="title" name="title" value={title} required onChange={(e) => setTitle(e.target.value)}></input>
+                    <input type="text" id="title" name="title" value={inputValues.title} required onChange={handleOnChange}></input>
                 </div>
 
                 <div>
                     <label htmlFor="location">Location : </label>
-                    <input type="text" id="location" name="location" required value={location} onChange={(e) => setLocation(e.target.value)} ></input>
+                    <input type="text" id="location" name="location" required value={inputValues.location} onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="when">Date & Time Of Hosting : </label>
-                    <input type="datetime-local" id="when" name="when" required min={minDate()} value={when} onChange={(e) => setWhen(e.target.value)} ></input>
+                    <input type="datetime-local" id="when" name="when" required min={minDate()} value={inputValues.when} onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="max_reservations">Max Reservations: </label>
-                    <input type="number" id="max_reservations" name="max_reservations" required value={maxReservations} onChange={(e) => setMaxReservations(e.target.value)} ></input>
+                    <input type="number" id="max_reservations" name="maxReservations" required value={inputValues.maxReservations} onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="price">Price: </label>
-                    <input type="number" id="price" name="price" value={price} required onChange={(e) => setPrice(e.target.value)} ></input>
+                    <input type="number" id="price" name="price" value={inputValues.price} required onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="description" className="meal_description">Description : </label>
-                    <textarea id="description" name="description" value={description} required onChange={(e) => setDescription(e.target.value)}></textarea>
+                    <textarea id="description" name="description" value={inputValues.description} required onChange={handleOnChange}></textarea>
                 </div>
                 <button type="submit" className="meal_submit_btn"> Submit</button>
             </form>

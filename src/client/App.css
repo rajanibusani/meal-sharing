@@ -2,10 +2,11 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;   
+    list-style-type: none;
 }
 /*header styling*/
 .header{   
-    height:100px;    
+    height:90px;    
     display: flex;
     justify-content: space-between;    
     background-color: rgba(218, 90, 16, 0.829);
@@ -35,8 +36,15 @@
    font-weight: 500;
    color: white; 
 }
-a:hover{
+.navigation a:hover{
     color:white;
+    background-color: #063d0a;  
+  border-radius: 8px;
+  border-width: 0px;
+  font-weight: 295;  
+  padding: 5px;
+  font-size: 17px;
+    
 }
 
 /*home page*/
@@ -44,27 +52,74 @@ a:hover{
 .about{
     width: 40%;
     margin:10px auto;
-    padding: 20px 10px;
-    background-color: rgba(36, 23, 23, 0.2);
+    padding: 20px 10px 40px 10px;
+    /* background-color: rgba(170, 164, 160, 0.4); */  
+    background-color: rgba(194, 201, 194, 0.4);   
     text-align: center !important;         
     line-height: 1.9em; 
-    align-items: center; 
+    align-items: center;   
     color: rgb(24, 12, 1);
-}
+} 
 .about-page{
-  width:100%;
+  width:100%;  
   margin: 0px;  
   margin-bottom: 5px;
-  padding-top:80px;
+  padding-top:40px;
   padding-bottom: 80px;
    background-image: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVhbHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
   background-size: cover;
 background-repeat: no-repeat; 
+
+}
+.search_meal_list{    
+    color: rgb(24, 12, 1);
+    font-weight: 700;  
+}
+.search_meal{
+    cursor: pointer;  
+    font-size: 18px;
+    color: black;
+}
+.search_meal_box{   
+    text-align: center;
+    color: rgb(248, 222, 222);   
+}
+.search_meal_box span{
+    color:  #063d0a;  
+}
+.search_input_box{
+    width: 350px;
+    margin: 0px auto;
+	height: 45px;
+	background-color: rgb(221, 206, 206);
+	border-radius: 30px;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.search_input{
+        flex: 1;
+     background-color: rgb(221, 206, 206);
+	height: 40px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	padding-left: 10px;  
+   
 }
 
 /* meals display*/
 .meals-container{ 
 padding: 20px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+.meals_display{
+ padding: 20px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
@@ -214,8 +269,8 @@ ul{
 	content: '';
 	position: absolute;
 	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
+	bottom: -10px;   
+    background-color: chocolate;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
@@ -223,7 +278,7 @@ ul{
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
 }
-.footer-col ul li a, .footer-col ul li, .footer-col ul li p{
+.footer-col ul li a, .footer-col ul li, .footer-col ul li p, .footer-col ul Link{
 	font-size: 16px;
 	text-transform: capitalize;
 	color: #ffffff;

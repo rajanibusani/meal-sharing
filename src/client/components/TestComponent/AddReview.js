@@ -43,8 +43,6 @@ const AddReview = () => {
         else {
             throw new Error(response.status)
         }
-
-        // setForm(false);
         setStatesEmpty();
     }
     return (

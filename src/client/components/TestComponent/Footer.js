@@ -22,8 +22,8 @@ const Footer = () => {
                     <h4>get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <Link to={"/meals/addmeal"}>  <li>Become a Host</li></Link>
-                        <Link to={"/meals/addmeal"}>  <li>How it works</li></Link>
+                        <li><Link to={"/meals/addmeal"}>  Become a Host</Link></li>
+                        <li><Link to={"/meals/addmeal"}> How it works</Link></li>
                     </ul>
                 </div>
                 <div className="footer-col">
