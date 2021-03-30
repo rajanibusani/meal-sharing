@@ -56,7 +56,7 @@ const AddReview = () => {
                 <h3>Add review</h3>
                 <form onSubmit={onSubmit} className="add_review_form">
                     <div>
-                        <label htmlFor="title">Meal Title : </label>
+                        <label htmlFor="title">Meal Title* : </label>
                         <input type="text" id="title" value={title} required name="title" onChange={(e) => setTitle(e.target.value)}></input>
                     </div>
                     <div>
@@ -64,8 +64,9 @@ const AddReview = () => {
                         <textarea id="description" name="description" value={description} rows="5" onChange={(e) => setDescription(e.target.value)}></textarea>
                     </div>
                     <div>
-                        <label htmlFor="rating" >Rating : </label>
+                        <label htmlFor="rating" >Rating* : </label>
                         <select id="Rating" name="stars" value={stars} required onChange={(e) => setStars(e.target.value)}>
+                            <option></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

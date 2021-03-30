@@ -50,19 +50,19 @@ const AddReservation = ({ setForm, id, noOfAvailableReservations }) => {
                 <h3>Book Reservation</h3>
             </div>
             <div>
-                <label htmlFor="name">Name : </label>
+                <label htmlFor="name">Name* : </label>
                 <input type="text" id="name" name="userName" value={inputValues.userName} required onChange={handleOnChange}></input>
             </div>
             <div>
-                <label htmlFor="phoneNumber">PhoneNumber : </label>
+                <label htmlFor="phoneNumber">PhoneNumber* : </label>
                 <input type="text" id="phoneNumber" name="phNumber" value={inputValues.phNumber} required onChange={handleOnChange}></input>
             </div>
             <div>
-                <label htmlFor="email">Email : </label>
+                <label htmlFor="email">Email* : </label>
                 <input type="email" id="name" name="email" value={inputValues.email} required onChange={handleOnChange} ></input>
             </div>
             <div>
-                <label htmlFor="NoOfGuests">NoOfGuests: </label>
+                <label htmlFor="NoOfGuests">NoOfGuests* : </label>
                 <input type="number" id="NoOfGuests" name="noOfGuests" value={inputValues.noOfGuests} required max={noOfAvailableReservations} onChange={handleOnChange} ></input>
             </div>
             <button type="submit" className="reservation_submit_btn"> Submit</button>
