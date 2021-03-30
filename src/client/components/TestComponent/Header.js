@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const logo = "https://i.ibb.co/x3Bd4Wg/Logo-Makr-8ot-Pkd.png";
+
 const Header = () => {
     return (
         <header className="header">
             <div className="logo_container">
-                <img src="src/client/assets/images/logo.png" alt="logo"></img>
+                <img src={logo} alt="logo"></img>
             </div>
             <ul className="navigation">
                 <Link to={"/"}>  <li>Home</li></Link>
