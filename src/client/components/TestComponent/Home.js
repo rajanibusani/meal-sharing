@@ -23,6 +23,7 @@ const About = () => {
     }
 
 
+
     return <div className="about-page">
         <div className="about">
             <h1>Welcome!</h1>
@@ -37,16 +38,16 @@ const About = () => {
 
                 {meals && meals.map(meal => {
                     return (
-                        <div className="search_meal_list">
+                        <div key={meals[0].id} className="search_meal_list">
                             { !display ?
                                 <div>
                                     <li className="search_meal" onClick={() => onClick(meal.title)}>{meal.title}</li>
                                 </div>
-                                : <div key={meals[0].id} className="search_meal_box">
+                                : <div className="search_meal_box">
                                     <h4><span>Meal Information</span></h4>
                                     <h4 ><span>Meal Title:</span> {meals[0].title}</h4>
                                     <h4><span>Location: </span> {meals[0].location}</h4>
-                                    <Link to={`meals/${meals.id}`}><button>More Details...</button></Link>
+                                    <Link to={`meals/${meal.id}`}><button>More Details...</button></Link>
                                 </div>
                             }
                         </div>
