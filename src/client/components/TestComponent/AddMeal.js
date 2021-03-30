@@ -48,7 +48,7 @@ const AddMeal = () => {
         }
 
         //posting a new meal
-        const response = postData('http://localhost:5000/api/meals', meal);
+        const response = postData('/api/meals', meal);
         console.log(response, response.ok)
         if (response) {
             const messagge = `Thank You, Your Meal : ${meal.title} Added`;

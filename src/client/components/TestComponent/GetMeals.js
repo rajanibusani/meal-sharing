@@ -28,7 +28,7 @@ const GetMeals = () => {
                     setMeals(meals);
                 })
         } else {
-            fetch(`http://localhost:5000/api/meals?title=${searchMeal}`)
+            fetch(`/api/meals?title=${searchMeal}`)
                 .then(res => res.json())
                 .then(data => {
                     setIsLoading(false)

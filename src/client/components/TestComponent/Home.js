@@ -9,7 +9,7 @@ const About = () => {
     const [display, setDisplay] = useState(false)
     useEffect(() => {
         if (searchMeal) {
-            fetch(`http://localhost:5000/api/meals?title=${searchMeal}`)
+            fetch(`/api/meals?title=${searchMeal}`)
                 .then(res => res.json())
                 .then(data => {
                     setMeals(data)
