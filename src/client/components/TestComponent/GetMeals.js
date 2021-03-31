@@ -67,8 +67,8 @@ const GetMeals = () => {
                             let imageSrc = "";
                             let stars = 0;
                             //adding random image for the new meals
-                            if (images[i]) {
-                                imageSrc = images[i]
+                            if (images[meal.id - 1]) {
+                                imageSrc = images[meal.id - 1]
                             } else {
                                 imageSrc = "https://panlasangpinoy.com/wp-content/uploads/2016/09/Ginataang-Gulay-500x485.jpg";
                             }

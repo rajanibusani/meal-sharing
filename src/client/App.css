@@ -380,6 +380,12 @@ font-size: 12px;
 .meal_reservation{
     padding: 0px;
 }
+.meals-container{
+    padding: 10px 5px;
+}
+.meals_display{
+    padding: 5px 2px;
+}
 .add_meal_form label, .add_review_form label, .add_reservation_form label {
     padding: 0px;
     font-size: 12px;
