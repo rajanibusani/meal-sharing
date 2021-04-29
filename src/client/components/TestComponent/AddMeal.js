@@ -36,7 +36,7 @@ const AddMeal = () => {
         setInputValues({ ...inputValues, [name]: value })
     }
     //on submit function
-    function onSubmit(e) {
+    async function onSubmit(e) {
         e.preventDefault();
         const meal = {
             title: inputValues.title,
@@ -48,14 +48,15 @@ const AddMeal = () => {
         }
 
         //posting a new meal
-        const response = postData('/api/meals', meal);
-        console.log(response, response.ok)
-        if (response) {
+        try {
+            await postData('/api/meals', meal);
+            debugger
             const messagge = `Thank You, Your Meal : ${meal.title} Added`;
             alert(messagge)
-        }
-        else {
-            throw new Error(response.status)
+
+        } catch {
+            alert("Your meal is not added...")
+            throw new Error("Your meal is not added...");
         }
         //making inputs empty
         setInputValues(initialValues)
