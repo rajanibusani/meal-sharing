@@ -62,6 +62,7 @@
 } 
 .about-page{
   width:100%;  
+  min-height: 750px;
   margin: 0px;  
   margin-bottom: 5px;
   padding-top:40px;
