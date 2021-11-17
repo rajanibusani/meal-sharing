@@ -14,7 +14,7 @@ const GetMeals = () => {
         "https://images.media-allrecipes.com/userphotos/3428546.jpg",
         "https://res.cloudinary.com/hksqkdlah/image/upload/39460_sfs-shrimp-tacos-reshoot-5.jpg",
         "https://photo.foodgawker.com/wp-content/uploads/2020/01/3537241.jpg",
-        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fassets.marthastewart.com%2Fstyles%2Fwmax-750%2Fd42%2Fsaffron-risotto-with-shrimp-peas-103271867%2Fsaffron-risotto-with-shrimp-peas-103271867_horiz.jpg%3Fitok%3D8Y2qlhOD",
+        "https://iowagirleats.com/wp-content/uploads/2013/01/ShrimpandAsparagusRisotto_Featured-srgb.jpg",
         
         "https://static.toiimg.com/thumb/61879694.cms?width=1200&height=1200",
         "https://onlinepasale.com/wp-content/uploads/2020/08/chicken-steam-momo-400x330-1-1.jpg",
