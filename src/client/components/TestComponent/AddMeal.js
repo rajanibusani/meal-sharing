@@ -94,7 +94,7 @@ const AddMeal = () => {
                 </div>
                 <div>
                     <label htmlFor="price">Price* : </label>
-                    <input type="number" id="price" name="price" value={inputValues.price} required onChange={handleOnChange} ></input>
+                    <input type="number" id="price" name="price" min="0" step="5" value={inputValues.price} required onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="description" className="meal_description">Description* : </label>
