@@ -90,7 +90,7 @@ const AddMeal = () => {
                 </div>
                 <div>
                     <label htmlFor="max_reservations">Max Reservations* : </label>
-                    <input type="number" id="max_reservations" name="maxReservations" required value={inputValues.maxReservations} onChange={handleOnChange} ></input>
+                    <input type="number" id="max_reservations" min="0" name="maxReservations" required value={inputValues.maxReservations} onChange={handleOnChange} ></input>
                 </div>
                 <div>
                     <label htmlFor="price">Price* : </label>
