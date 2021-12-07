@@ -30,16 +30,7 @@ function App() {
           <AddReview />
         </Route>
 
-      </Switch>
-      {/* <Route exact path="/">
-        <p>test </p>
-      </Route>
-      <Route exact path="/lol">
-        <p>lol</p>
-      </Route>
-      <Route exact path="/test-component">
-        <TestComponent></TestComponent>
-      </Route> */}
+      </Switch>     
       <Footer />
     </Router>
   );

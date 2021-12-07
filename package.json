@@ -14,6 +14,7 @@
   },
   "author": "Benjamin Hughes",
   "license": "MIT",
+  
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",

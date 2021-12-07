@@ -49,8 +49,7 @@ const AddMeal = () => {
 
         //posting a new meal
         try {
-            await postData('/api/meals', meal);
-            debugger
+            await postData('/api/meals', meal);           
             const messagge = `Thank You, Your Meal : ${meal.title} Added`;
             alert(messagge)
 
