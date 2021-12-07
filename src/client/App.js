@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TestComponent from "./components/TestComponent/TestComponent";
-import GetMeals from "./components/TestComponent/GetMeals";
-import Header from "./components/TestComponent/Header";
-import Footer from "./components/TestComponent/Footer";
-import About from "./components/TestComponent/Home";
-import Meal from "./components/TestComponent/Meal";
-import AddMeal from "./components/TestComponent/AddMeal";
-import AddReview from "./components/TestComponent/AddReview";
+import GetMeals from "./components/GetMeals";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import About from "./components/Home";
+import Meal from "./components/Meal";
+import AddMeal from "./components/AddMeal";
+import AddReview from "./components/AddReview";
 function App() {
   return (
     <Router>
