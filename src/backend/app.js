@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router();
 const path = require("path");
 
+
 const mealsRouter = require("./api/meals");
 const reservationsRouter = require("./api/reservations");
 const reviewsRouter = require("./api/reviews");
@@ -10,7 +11,7 @@ const buildPath = path.join(__dirname, "../../dist");
 const port = process.env.PORT || 3000;
 const cors = require("cors");
 
-// For week4 no need to look into this!
+
 // Serve the built client html
 app.use(express.static(buildPath));
 
@@ -27,7 +28,7 @@ router.use("/reviews", reviewsRouter);
 
 app.use(process.env.API_PATH, router);
 
-// for the frontend. Will first be covered in the react class
+
 app.use("*", (req, res) => {
   res.sendFile(path.join(`${buildPath}/index.html`));
 });

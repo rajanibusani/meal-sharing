@@ -1,3 +1,406 @@
 * {
     box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;   
+    list-style-type: none;
 }
+/*header styling*/
+.header{   
+    height:90px;    
+    display: flex;
+    justify-content: space-between;    
+    background-color: rgba(218, 90, 16, 0.829);
+    margin-bottom: 1px;
+}
+.logo_container{
+    height: 100%;
+    width: 200px;
+    margin-left: 30px;   
+    border: 2px solid rgb(4, 39, 4);
+    border-radius: 50px;    
+}
+.logo_container img{
+    width: 100%;
+    height:100%;
+    padding: 0px;
+}
+.navigation{
+    display: flex;
+    flex-wrap: wrap;  
+   width: 40%;
+   justify-content: space-around;
+   margin-right: 10px;
+   align-items: center;
+   font-size: 1.1em;
+   text-transform: uppercase;
+   font-weight: 500;
+   color: white; 
+}
+.navigation a:hover{
+    color:white;
+    background-color: #063d0a;  
+  border-radius: 8px;
+  border-width: 0px;
+  font-weight: 295;  
+  padding: 5px;
+  font-size: 17px;
+    
+}
+
+/*home page*/
+
+.about{
+    width: 40%;
+    margin:10px auto;
+    padding: 20px 10px 40px 10px;
+    /* background-color: rgba(170, 164, 160, 0.4); */  
+    background-color: rgba(194, 201, 194, 0.4);   
+    text-align: center !important;         
+    line-height: 1.9em; 
+    align-items: center;   
+    color: rgb(24, 12, 1);
+} 
+.about-page{
+  width:100%;  
+  min-height: 750px;
+  margin: 0px;  
+  margin-bottom: 5px;
+  padding-top:40px;
+  padding-bottom: 80px;
+   background-image: url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVhbHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+  background-size: cover;
+background-repeat: no-repeat; 
+
+}
+.search_meal_list{    
+    color: rgb(24, 12, 1);
+    font-weight: 700;  
+}
+.search_meal{
+    cursor: pointer;  
+    font-size: 18px;
+    color: black;
+}
+.search_meal_box{   
+    text-align: center;
+    color: rgb(10, 10, 10);   
+}
+.search_meal_box span{
+    color:  #063d0a;  
+}
+.search_input_box{
+    width: 350px;
+    margin: 0px auto;
+	height: 45px;
+	background-color: rgb(221, 206, 206);
+	border-radius: 30px;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.search_input{
+        flex: 1;
+     background-color: rgb(221, 206, 206);
+	height: 40px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	padding-left: 10px;  
+   
+}
+
+/* meals display*/
+.meals-container{ 
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+.meals_display{
+ padding: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+}
+.meal_box{
+width:250px;
+background-color: grey;
+border-radius: 5px;
+margin: 20px;
+border:2px solid green;
+box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.meal_image{
+    width: 100%;
+    height: 50%;   
+}
+.meal_image img{
+    width:100%;
+    height: 100%;
+}
+.meal_title{   
+    padding: 10px;
+    text-align: center;    
+    border-bottom: 2px solid rgb(41, 39, 39);
+}
+.description{
+    padding: 10px;
+    text-align: center;   
+    line-height: 1.5em;
+}
+.description button{
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+.meal_reservation{  
+  padding:40px;  
+}
+
+/*about specific meal Info*/
+.meal_info, .review_info, .add_meal_page{
+    width:50%;
+    margin: 10px auto;
+    padding: 15px;    
+    background-color: rgba(160, 144, 144, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    line-height: 1.9em;
+    color:rgb(5, 18, 94);
+   
+}
+.meal_info h3, .review_info h3,.add_meal_page h3{
+    color: rgb(11, 97, 11);
+}
+.host{  
+    text-align: center;
+    padding: 10px;
+}
+.host h4{
+    padding-top:5px ;
+} 
+.host span{
+    color:blue;
+    cursor: pointer;
+}
+.add_meal_info span{
+    color: rgb(94, 86, 13);
+    font-weight: 700;
+}
+
+
+/* Adding Meal, review, reservation Form styles */
+
+.add_meal_form, .add_review_form, .add_reservation_form{
+    max-width:800px;
+  margin:10px auto;  
+  padding:10px 25px;
+  border-radius:5px;
+}
+.add_meal_form label, .add_review_form label, .add_reservation_form label{
+    display:inline-block;
+    width:40%;
+    padding:10px;
+    text-transform:uppercase;
+    font-size:14px;
+    font-weight: 600;
+    color:rgb(19, 19, 68);
+}
+.add_meal_form input, .add_meal_form textarea, 
+.add_review_form input, .add_review_form textarea, .add_review_form select,
+.add_reservation_form input{
+    display:inline-block;
+    width:60%;
+    border:2px solid #2980B9;
+    background-color: rgb(141, 141, 150);
+    margin-bottom: 5px;
+    padding:.5rem;
+    font-size:18px;
+    border-radius:5px;
+}
+.meal_submit_btn, .reservation_submit_btn, .review_submit_btn{ 
+  background:#064b09;
+  padding:8px;
+  display: block;
+  color:white;
+  margin:0px auto; 
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.3s all ease;  
+}
+.meal_submit_btn:hover, .reservation_submit_btn:hover, .review_submit_btn:hover{
+    background:#e2863a;
+}
+.no_button{
+    display: none;
+}
+
+/* Footer Design */
+.footer{
+	background-color: #24262b;
+    padding: 70px 0 20px 0;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;   
+    background-color: chocolate;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a, .footer-col ul li, .footer-col ul li p, .footer-col ul Link{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  
+	color: #ffffff;
+    padding-left: 8px;
+  
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 45px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+.footer .row-2{
+    color:white;
+    margin-top: 30px;
+    padding:20px;
+    border-top:1px solid grey;
+    /* background-color: brown; */
+    text-align: center;
+    font-size: 12px;
+}
+.row-2 a {
+    color:white;
+    background-color:grey;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.starRatingInput span {
+    background-color: transparent;
+    border: 0;
+    color: #969696;
+    font-size: 24px;
+  }
+  
+  .starRatingInput span.highlighted {
+    color: #d8b800;
+  }
+  
+
+/*responsive design For mobiles*/
+
+@media(max-width: 574px){
+    .navigation{
+        flex-direction: column;
+        font-size: 12px;
+    }
+    .about{
+        width:100%;
+    }
+  .footer-col{
+    width: 50%;
+}
+.meal_box{
+    width:40%;
+    margin: 10px; 
+    font-size: 12px;    
+}
+
+button{
+    padding :5px;
+    font-size: 12px;
+}
+.meal_info, .review_info, .add_meal_page{
+    width: 100%;
+}
+.logo_container{
+    margin-left: 5px;
+}
+li:hover{
+    font-size: 12px;
+}
+.add_meal_form, .add_review_form, .add_reservation_form{
+width:100%;
+padding: 0px;
+margin: 5px;
+font-size: 12px;
+}
+.meal_reservation{
+    padding: 0px;
+}
+.meals-container{
+    padding: 10px 5px;
+}
+.meals_display{
+    padding: 5px 2px;
+}
+.add_meal_form label, .add_review_form label, .add_reservation_form label {
+    padding: 0px;
+    font-size: 12px;
+}
+.add_meal_form input, .add_meal_form textarea, 
+.add_review_form input, .add_review_form textarea, .add_review_form select,
+.add_reservation_form input{
+    padding: 4px;
+    font-size: 12px;
+}
+.footer-col ul li:last-child{
+    margin-bottom: 10px;
+}
+
+}
+
+

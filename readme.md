@@ -38,3 +38,5 @@ The api can now be found on `http://localhost:3000/api/` an example is `http://l
 - [Mysql](https://www.npmjs.com/package/mysql) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
+
+

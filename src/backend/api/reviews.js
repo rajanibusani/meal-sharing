@@ -13,7 +13,6 @@ router.get("/", async (request, response) => {
 
 router.post("/", async (request, response) => {
   try {
-    console.log(request.body)
     const insertReview = await knex("reviews").insert(request.body);
     await knex("reviews")
       .where({ id: insertReview })
